@@ -1,5 +1,5 @@
 # Dockerfile for running neoverse app (production)
-FROM node:22-alpine
+FROM node:22-slim
 WORKDIR /app
 # Install dependencies (including dev deps needed for build)
 COPY package.json package-lock.json* ./

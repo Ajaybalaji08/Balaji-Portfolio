@@ -6,6 +6,7 @@ COPY package.json package-lock.json* ./
 RUN npm install --legacy-peer-deps || npm install
 # Copy source
 COPY . .
+ENV NODE_OPTIONS="--max-old-space-size=450"
 # Build the frontend and bundle server
 RUN npm run build
 EXPOSE 3000

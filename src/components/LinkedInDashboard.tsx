@@ -119,7 +119,7 @@ export default function LinkedInDashboard() {
 
                 {/* Quick connect anchor to actual LinkedIn profile or template target */}
                 <a
-                  href="https://linkedin.com/in/gosuajaybalaji"
+                  href="https://linkedin.com/in/ajaybalajigosu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm tracking-wide transition-all shadow-md shadow-blue-600/10 flex items-center justify-center space-x-2.5 cursor-pointer"

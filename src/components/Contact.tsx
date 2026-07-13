@@ -42,7 +42,7 @@ export default function Contact() {
 
   const socialLinks = [
     { label: "Email Coordinate", value: "ajaybalajigosu31@gmail.com", icon: Mail, url: "mailto:ajaybalajigosu31@gmail.com" },
-    { label: "LinkedIn Port", value: "linkedin.com/in/gosuajaybalaji", icon: Linkedin, url: "https://linkedin.com/in/gosuajaybalaji" },
+    { label: "LinkedIn Port", value: "linkedin.com/in/ajaybalajigosu", icon: Linkedin, url: "https://linkedin.com/in/ajaybalajigosu" },
     { label: "GitHub Hub", value: "github.com/Ajaybalaji08", icon: Github, url: "https://github.com/Ajaybalaji08" },
   ];
 

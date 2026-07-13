@@ -436,8 +436,8 @@ app.post("/api/visit", async (req, res) => {
       </div>
     `;
 
-    // Send email alert for visit
-    await sendNotificationEmail(`👤 Portfolio Visit Alert from ${ip}`, html);
+    // Send email alert for visit (disabled to prevent inbox spam)
+    // await sendNotificationEmail(`👤 Portfolio Visit Alert from ${ip}`, html);
 
     res.json({ success: true });
   } catch (error: any) {

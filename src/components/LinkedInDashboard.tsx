@@ -24,27 +24,8 @@ export default function LinkedInDashboard() {
     { name: "Full Stack MVC (JSP & Tomcat)", count: 28, endorsed: false },
   ]);
 
-  // Peer Recommendations list (pre-seeded with premium endorsements)
-  const [recommendations, setRecommendations] = useState<Recommendation[]>([
-    {
-      id: "1",
-      name: "Kiran Kumar",
-      role: "Project Mentor",
-      company: "SkillDzire (APSCHE)",
-      text: "Ajay's contribution during his Full Stack Java internship was excellent. He designed robust CRUD platforms with Spring Boot and optimized database queries with Hibernate JPA, boosting our overall system performance by 35%.",
-      timestamp: "September 2024",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150"
-    },
-    {
-      id: "2",
-      name: "Dr. Prasad V.",
-      role: "Professor & Coordinator",
-      company: "R.V.R & J.C College of Engineering",
-      text: "Ajay demonstrated remarkable technical leadership in organizing the 'Codespire' and 'Techxplore' contests. His research paper on TF-IDF machine learning pipelines presented at the MIDAS-2025 conference was well-designed and received highly favorable feedback.",
-      timestamp: "February 2025",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150"
-    },
-  ]);
+  // Peer Recommendations list (starts empty)
+  const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
 
   // Form states for leaving a recommendation
   const [form, setForm] = useState({ name: "", role: "", company: "", text: "" });

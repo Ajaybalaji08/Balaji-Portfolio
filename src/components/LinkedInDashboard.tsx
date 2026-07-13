@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Linkedin, Award, Users, Eye, TrendingUp, ThumbsUp, Send, CheckCircle2, Sparkles, MessageSquare, Plus } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import avatarImg from "../../assets/portfolio_avatar.jpg";
 
 interface Recommendation {
   id: string;
@@ -120,7 +121,7 @@ export default function LinkedInDashboard() {
                 {/* Avatar */}
                 <div className="relative mb-4">
                   <img
-                    src="https://github.com/Ajaybalaji08.png"
+                    src={avatarImg}
                     alt="Ajay Balaji's Avatar"
                     referrerPolicy="no-referrer"
                     className="w-20 h-20 rounded-2xl object-cover border-4 border-slate-950 relative z-10 shadow-lg"

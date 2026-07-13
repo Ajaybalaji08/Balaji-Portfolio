@@ -197,8 +197,28 @@ app.post("/api/chat", async (req, res) => {
 
     res.json({ text: response.text });
   } catch (error: any) {
-    console.error("Gemini API Error:", error);
-    res.status(500).json({ error: error.message || "Failed to process chat response" });
+    console.warn("Primary Gemini model failed, attempting fallback model (gemini-2.5-flash)...", error.message || error);
+    try {
+      const fallbackResponse = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: promptContext,
+        config: {
+          systemInstruction,
+          temperature: 0.7,
+        },
+      });
+      res.json({ text: fallbackResponse.text });
+    } catch (fallbackError: any) {
+      console.error("Gemini Fallback Model Error:", fallbackError);
+      let userFriendlyError = "Failed to process chat response. Please try again.";
+      const errMsg = (fallbackError.message || error.message || "").toLowerCase();
+      if (errMsg.includes("high demand") || errMsg.includes("unavailable") || fallbackError.status === 503 || fallbackError.code === 503) {
+        userFriendlyError = "Ajay's AI avatar is temporarily offline due to high demand on Google's servers. Please try sending your message again in a few moments!";
+      } else if (errMsg.includes("api key") || errMsg.includes("api_key") || errMsg.includes("key")) {
+        userFriendlyError = "The Gemini API key is missing or invalid. Please check the server secrets configuration.";
+      }
+      res.status(500).json({ error: userFriendlyError });
+    }
   }
 });
 

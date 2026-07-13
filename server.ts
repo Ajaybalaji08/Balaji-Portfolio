@@ -98,7 +98,7 @@ const DEVELOPER_PROFILE = {
   location: "Guntur, Andhra Pradesh, India",
   email: "ajaybalajigosu31@gmail.com",
   github: "Ajaybalaji08",
-  linkedin: "linkedin.com/in/ajaybalajigosu",
+  linkedin: "www.linkedin.com/in/ajaybalajigosu/",
   bio: "A passionate Computer Science student and Full Stack Developer specializing in Java, Spring Boot, REST APIs, Python, and modern web application development with solid experience building production-ready responsive applications.",
   skills: {
     frontend: ["Java", "Python", "HTML", "CSS", "JavaScript", "React"],

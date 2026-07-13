@@ -7,7 +7,7 @@ interface FooterProps {
 export default function Footer({ onOpenConsole }: FooterProps) {
   const socialIcons = [
     { icon: Mail, url: "mailto:ajaybalajigosu31@gmail.com", label: "Email Address" },
-    { icon: Linkedin, url: "https://linkedin.com/in/ajaybalajigosu", label: "LinkedIn Profile" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/ajaybalajigosu/", label: "LinkedIn Profile" },
     { icon: Github, url: "https://github.com/Ajaybalaji08", label: "GitHub Profile" },
   ];
 

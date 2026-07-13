@@ -1,0 +1,6 @@
+{
+  "name": "Ajay Balaji Portfolio",
+  "description": "An immersive 3D personal portfolio website built with React, Three.js, React Three Fiber, GSAP, and Tailwind CSS. Features an interactive cosmic hero scene, live GitHub statistics, and a Gemini-powered AI chat assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

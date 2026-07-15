@@ -53,9 +53,7 @@ export default function GitHubDashboard() {
             <h2 className="text-4xl md:text-5xl font-sans font-extrabold tracking-tight text-white mb-4">
               GitHub <span className="bg-gradient-to-r from-blue-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">Live Matrix</span>
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto font-sans font-light">
-              Real-time synchronization with GitHub API. Search any profile to inspect open-source contributions, repository counts, and top languages.
-            </p>
+
           </div>
         </ScrollReveal>
 

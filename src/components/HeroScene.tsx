@@ -196,6 +196,58 @@ function DataNodes() {
   );
 }
 
+// Floating futuristic 3D structures
+function FloatingStructures() {
+  const knotRef = useRef<THREE.Mesh>(null);
+  const ringRef = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    if (knotRef.current) {
+      knotRef.current.rotation.y = time * 0.15;
+      knotRef.current.rotation.z = time * 0.05;
+    }
+    if (ringRef.current) {
+      ringRef.current.rotation.x = time * 0.1;
+      ringRef.current.rotation.y = time * 0.2;
+    }
+  });
+
+  return (
+    <group>
+      {/* 3D Cyber Torus Knot on the right */}
+      <group position={[4, 1.5, -2]}>
+        <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.8}>
+          <mesh ref={knotRef}>
+            <torusKnotGeometry args={[0.5, 0.16, 100, 16, 3, 4]} />
+            <meshStandardMaterial
+              color="#d946ef"
+              emissive="#a21caf"
+              emissiveIntensity={0.8}
+              wireframe={true}
+            />
+          </mesh>
+        </Float>
+      </group>
+
+      {/* 3D Geometric Ring on the left */}
+      <group position={[-4, -2, -1]}>
+        <Float speed={2} rotationIntensity={0.8} floatIntensity={1}>
+          <mesh ref={ringRef}>
+            <torusGeometry args={[0.6, 0.12, 16, 100]} />
+            <meshStandardMaterial
+              color="#00f0ff"
+              emissive="#0055ff"
+              emissiveIntensity={0.8}
+              wireframe={true}
+            />
+          </mesh>
+        </Float>
+      </group>
+    </group>
+  );
+}
+
 export default function HeroScene({ activeSection }: HeroSceneProps) {
   return (
     <div className="absolute inset-0 w-full h-full -z-10 bg-slate-950 overflow-hidden pointer-events-none">
@@ -220,6 +272,9 @@ export default function HeroScene({ activeSection }: HeroSceneProps) {
 
         {/* Floating Cybernetic Data Nodes */}
         <DataNodes />
+
+        {/* Floating Cyber Torus Knot and Torus Ring */}
+        <FloatingStructures />
 
         {/* Interactive Space Particle Starfield */}
         <Stars
